@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Sumptuous Braids — beautiful, protective and luxurious braided hairstyles created with intention."
+  >
+
+  <meta name="theme-color" content="#8b5e3c">
+
+  <title>Sumptuous Braids | Luxury Braiding Studio</title>
+
+  <style>
+    /* =========================================================
+       SUMPTUOUS BRAIDS
+       MODERN VANILLA HTML / CSS / JAVASCRIPT
+    ========================================================= */
+
+    :root {
+      --primary: #8b5e3c;
+      --primary-dark: #633d25;
+      --secondary: #d9b892;
+      --cream: #fffaf4;
+      --white: #ffffff;
+      --black: #171310;
+      --gray: #6f6862;
+      --light: #f5eee7;
+      --border: #eadfd5;
+      --shadow: 0 15px 45px rgba(65, 42, 27, 0.10);
+      --radius: 18px;
+      --transition: 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--black);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-heading {
+      max-width: 650px;
+      margin: 0 auto 50px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: var(--gray);
+    }
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255, 250, 244, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(234, 223, 213, 0.7);
+    }
+
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: bold;
+      color: var(--primary-dark);
+      white-space: nowrap;
+    }
+
+    .logo span {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 0.55rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-align: center;
+      color: var(--gray);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-book {
+      background: var(--primary);
+      color: var(--white) !important;
+      padding: 11px 19px;
+      border-radius: 50px;
+    }
+
+    .nav-book:hover {
+      background: var(--primary-dark);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 1.7rem;
+      cursor: pointer;
+      color: var(--black);
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 100vh;
+      padding-top: 76px;
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(23, 19, 16, 0.84),
+          rgba(23, 19, 16, 0.35)
+        ),
+        url("images/hero-braids.jpg") center/cover no-repeat;
+      color: var(--white);
+    }
+
+    .hero-content {
+      max-width: 760px;
+      padding: 90px 0;
+    }
+
+    .hero .eyebrow {
+      color: var(--secondary);
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 0.98;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--secondary);
+    }
+
+    .hero p {
+      max-width: 590px;
+      font-size: 1.08rem;
+      color: #f4ebe4;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      cursor: pointer;
+      padding: 14px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--secondary);
+      color: var(--black);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: var(--white);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.6);
+      color: var(--white);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    /* =========================================================
+       QUICK FEATURES
+    ========================================================= */
+
+    .features {
+      margin-top: -45px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .feature-grid {
+      background: var(--white);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      overflow: hidden;
+    }
+
+    .feature {
+      padding: 28px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .feature:last-child {
+      border-right: 0;
+    }
+
+    .feature-icon {
+      font-size: 1.7rem;
+      margin-bottom: 8px;
+    }
+
+    .feature h3 {
+      font-family: Georgia, serif;
+      margin-bottom: 5px;
+    }
+
+    .feature p {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 580px;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .about-image img {
+      height: 100%;
+    }
+
+    .about-content h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      color: var(--gray);
+      margin-bottom: 18px;
+    }
+
+    .about-list {
+      margin: 25px 0;
+    }
+
+    .about-list li {
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .about-list li::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    /* =========================================================
+       SERVICES
+    ========================================================= */
+
+    .services {
+      background: var(--light);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-number {
+      color: var(--secondary);
+      font-size: 2rem;
+      font-family: Georgia, serif;
+      font-weight: bold;
+    }
+
+    .service-card h3 {
+      font-family: Georgia, serif;
+      font-size: 1.35rem;
+      margin: 10px 0;
+    }
+
+    .service-card p {
+      color: var(--gray);
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      color: var(--primary);
+      font-size: 1.15rem;
+      font-weight: bold;
+    }
+
+    /* =========================================================
+       GALLERY
+    ========================================================= */
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .gallery-item {
+      height: 310px;
+      border-radius: 15px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(6) {
+      height: 380px;
+    }
+
+    .gallery-item img {
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    /* =========================================================
+       BOOKING
+    ========================================================= */
+
+    .booking {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .booking-info h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .booking-info p {
+      color: #cfc5bd;
+      margin-bottom: 25px;
+    }
+
+    .booking-note {
+      border-left: 3px solid var(--secondary);
+      padding-left: 18px;
+      color: #ded3ca;
+    }
+
+    .booking-form {
+      background: var(--white);
+      color: var(--black);
+      padding: 35px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 13px;
+      outline: none;
+      background: #fffdfa;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .booking-form .btn {
+      width: 100%;
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .booking-form .btn:hover {
+      background: var(--primary-dark);
+    }
+
+    /* =========================================================
+       TESTIMONIALS
+    ========================================================= */
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .testimonial {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: var(--radius);
+    }
+
+    .stars {
+      color: var(--primary);
+      letter-spacing: 3px;
+      margin-bottom: 15px;
+    }
+
+    .testimonial p {
+      color: var(--gray);
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .testimonial strong {
+      font-family: Georgia, serif;
+    }
+
+    /* =========================================================
+       FAQ
+    ========================================================= */
+
+    .faq {
+      background: var(--light);
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    details {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      padding: 18px 20px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    details p {
+      color: var(--gray);
+      padding-top: 15px;
+    }
+
+    /* =========================================================
+       CTA
+    ========================================================= */
+
+    .cta {
+      padding: 80px 0;
+      background:
+        linear-gradient(
+          rgba(139, 94, 60, 0.92),
+          rgba(99, 61, 37, 0.92)
+        ),
+        url("images/cta-braids.jpg") center/cover;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(2.3rem, 6vw, 4rem);
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 600px;
+      margin: 0 auto 25px;
+      color: #f6ebe2;
+    }
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .contact-card {
+      padding: 30px;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .contact-card span {
+      font-size: 1.8rem;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .contact-card h3 {
+      font-family: Georgia, serif;
+      margin-bottom: 7px;
+    }
+
+    .contact-card p {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      background: #100d0b;
+      color: #eee4dd;
+      padding: 55px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+    }
+
+    .footer-logo {
+      font-family: Georgia, serif;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    footer p {
+      color: #a9a19b;
+      font-size: 0.9rem;
+    }
+
+    .footer-column h3 {
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: #aaa19a;
+      font-size: 0.88rem;
+      margin-bottom: 9px;
+      transition: var(--transition);
+    }
+
+    .footer-column a:hover {
+      color: var(--secondary);
+    }
+
+    .copyright {
+      border-top: 1px solid #302a26;
+      padding-top: 22px;
+      text-align: center;
+      color: #827a74;
+      font-size: 0.8rem;
+    }
+
+    /* =========================================================
+       FLOATING WHATSAPP
+    ========================================================= */
+
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #25d366;
+      color: white;
+      font-size: 1.5rem;
+      z-index: 900;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    /* =========================================================
+       SCROLL TOP
+    ========================================================= */
+
+    .scroll-top {
+      position: fixed;
+      right: 20px;
+      bottom: 90px;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      cursor: pointer;
+      display: none;
+      z-index: 900;
+    }
+
+    .scroll-top.show {
+      display: block;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        background: var(--cream);
+        padding: 25px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .about-grid,
+      .booking-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid,
+      .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      .hero h1 {
+        font-size: 3.3rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .feature:last-child {
+        border-bottom: 0;
+      }
+
+      .service-grid,
+      .testimonial-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item,
+      .gallery-item:nth-child(2),
+      .gallery-item:nth-child(6) {
+        height: 350px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full {
+        grid-column: auto;
+      }
+
+      .booking-form {
+        padding: 23px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
+
+  <header>
+    <div class="container navbar">
+
+      <a href="#home" class="logo">
+        Sumptuous Braids
+        <span>Luxury Braiding Studio</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a href="#booking" class="nav-book">Book Now</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero" id="home">
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <span class="eyebrow">
+            Luxury • Beauty • Confidence
+          </span>
+
+          <h1>
+            Braids that make you feel
+            <span>sumptuous.</span>
+          </h1>
+
+          <p>
+            Beautiful, protective and carefully crafted hairstyles
+            designed to complement your personality, lifestyle and
+            natural beauty.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#booking" class="btn btn-primary">
+              Book Your Appointment
+            </a>
+
+            <a href="#gallery" class="btn btn-outline">
+              Explore Our Styles
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FEATURES
+    ====================================================== -->
+
+    <section class="features">
+
+      <div class="container">
+
+        <div class="feature-grid">
+
+          <article class="feature">
+            <div class="feature-icon">✦</div>
+            <h3>Premium Styling</h3>
+            <p>Detailed work with a luxurious finish.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon">♡</div>
+            <h3>Hair Care First</h3>
+            <p>Protective styling with your hair's health in mind.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-icon">⌁</div>
+            <h3>Made For You</h3>
+            <p>Styles customized around your look and lifestyle.</p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section class="section" id="about">
+
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div class="about-image">
+            <img
+              src="images/about-braider.jpg"
+              alt="Professional braider creating a beautiful braided hairstyle"
+            >
+          </div>
+
+          <div class="about-content">
+
+            <span class="eyebrow">
+              About Sumptuous
+            </span>
+
+            <h2>
+              Your hair deserves more than a hairstyle.
+            </h2>
+
+            <p>
+              At Sumptuous Braids, we believe braiding is an art.
+              Every section, part and finish is created with care
+              so you leave feeling confident and beautiful.
+            </p>
+
+            <p>
+              Whether you're looking for an everyday protective style,
+              vacation-ready braids or a statement look, we're here
+              to bring your vision to life.
+            </p>
+
+            <ul class="about-list">
+              <li>Professional braiding experience</li>
+              <li>Clean and comfortable environment</li>
+              <li>Personalized styling consultation</li>
+              <li>Beautiful, long-lasting finishes</li>
+            </ul>
+
+            <a href="#booking" class="btn btn-primary">
+              Start Your Booking
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SERVICES
+    ====================================================== -->
+
+    <section class="section services" id="services">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Our Services
+          </span>
+
+          <h2>
+            Find your perfect style.
+          </h2>
+
+          <p>
+            From timeless classics to modern statement looks,
+            choose the style that fits you.
+          </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+          <article class="service-card">
+            <span class="service-number">01</span>
+            <h3>Knotless Braids</h3>
+            <p>
+              Lightweight, versatile and designed for a
+              natural-looking finish.
+            </p>
+            <span class="price">From $180</span>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">02</span>
+            <h3>Box Braids</h3>
+            <p>
+              A timeless protective style customized to
+              your preferred length and size.
+            </p>
+            <span class="price">From $160</span>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">03</span>
+            <h3>Boho Braids</h3>
+            <p>
+              Effortless texture and personality with
+              beautiful bohemian details.
+            </p>
+            <span class="price">From $220</span>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">04</span>
+            <h3>Fulani Braids</h3>
+            <p>
+              Detailed cultural-inspired patterns with
+              a sophisticated modern finish.
+            </p>
+            <span class="price">From $190</span>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">05</span>
+            <h3>Goddess Braids</h3>
+            <p>
+              Bold, elegant and expressive braids for
+              a standout appearance.
+            </p>
+            <span class="price">From $210</span>
+          </article>
+
+          <article class="service-card">
+            <span class="service-number">06</span>
+            <h3>Kids Braids</h3>
+            <p>
+              Cute, comfortable and age-appropriate
+              styles created with extra care.
+            </p>
+            <span class="price">From $90</span>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         GALLERY
+    ====================================================== -->
+
+    <section class="section" id="gallery">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Style Gallery
+          </span>
+
+          <h2>
+            A little inspiration.
+          </h2>
+
+          <p>
+            Browse some of the looks you can create at
+            Sumptuous Braids.
+          </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+          <div class="gallery-item">
+            <img
+              src="images/braids-1.jpg"
+              alt="Long knotless braids"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="images/braids-2.jpg"
+              alt="Boho braids hairstyle"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="images/braids-3.jpg"
+              alt="Elegant box braids"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="images/braids-4.jpg"
+              alt="Protective braided hairstyle"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="images/braids-5.jpg"
+              alt="Modern Fulani braids"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="images/braids-6.jpg"
+              alt="Goddess braids"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="images/braids-7.jpg"
+              alt="Stylish protective hairstyle"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="images/braids-8.jpg"
+              alt="Beautiful braided hairstyle"
+              loading="lazy"
+            >
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BOOKING
+    ====================================================== -->
+
+    <section class="section booking" id="booking">
+
+      <div class="container">
+
+        <div class="booking-grid">
+
+          <div class="booking-info">
+
+            <span class="eyebrow">
+              Appointments
+            </span>
+
+            <h2>
+              Ready for your next look?
+            </h2>
+
+            <p>
+              Tell us what you're looking for and request
+              your appointment. We'll get back to you with
+              availability and booking details.
+            </p>
+
+            <p class="booking-note">
+              Please arrive with clean, detangled and stretched
+              hair unless your selected service includes preparation.
+            </p>
+
+          </div>
+
+
+          <form class="booking-form" id="bookingForm">
+
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Your phone"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="service">Choose Service</label>
+
+                <select id="service" name="service" required>
+                  <option value="">Select a service</option>
+                  <option>Knotless Braids</option>
+                  <option>Box Braids</option>
+                  <option>Boho Braids</option>
+                  <option>Fulani Braids</option>
+                  <option>Goddess Braids</option>
+                  <option>Kids Braids</option>
+                </select>
+
+              </div>
+
+              <div class="form-group">
+                <label for="date">Preferred Date</label>
+
+                <input
+                  type="date"
+                  id="date"
+                  name="date"
+                  required
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="time">Preferred Time</label>
+
+                <select id="time" name="time" required>
+                  <option value="">Choose time</option>
+                  <option>9:00 AM</option>
+                  <option>10:00 AM</option>
+                  <option>11:00 AM</option>
+                  <option>12:00 PM</option>
+                  <option>1:00 PM</option>
+                  <option>2:00 PM</option>
+                  <option>3:00 PM</option>
+                  <option>4:00 PM</option>
+                </select>
+
+              </div>
+
+              <div class="form-group full">
+
+                <label for="message">
+                  Style Details / Notes
+                </label>
+
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Tell us about the style, length, color, size, etc."
+                ></textarea>
+
+              </div>
+
+            </div>
+
+            <button type="submit" class="btn">
+              Request Appointment
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TESTIMONIALS
+    ====================================================== -->
+
+    <section class="section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Client Love
+          </span>
+
+          <h2>
+            Beautiful hair. Happy clients.
+          </h2>
+
+        </div>
+
+
+        <div class="testimonial-grid">
+
+          <article class="testimonial">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p>
+              "My braids came out absolutely beautiful.
+              The parts were clean and the entire experience
+              was so relaxing."
+            </p>
+
+            <strong>— Jasmine R.</strong>
+
+          </article>
+
+
+          <article class="testimonial">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p>
+              "Exactly what I showed in my inspiration picture.
+              I loved how careful and professional everything was."
+            </p>
+
+            <strong>— Taylor M.</strong>
+
+          </article>
+
+
+          <article class="testimonial">
+
+            <div class="stars">
+              ★★★★★
+            </div>
+
+            <p>
+              "I've finally found my braider. My style lasted
+              beautifully and I received compliments everywhere."
+            </p>
+
+            <strong>— Nicole A.</strong>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FAQ
+    ====================================================== -->
+
+    <section class="section faq" id="faq">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            FAQ
+          </span>
+
+          <h2>
+            Before your appointment.
+          </h2>
+
+        </div>
+
+
+        <div class="faq-container">
+
+          <details>
+            <summary>
+              Do I need to bring my own hair?
+            </summary>
+
+            <p>
+              Hair requirements vary by service. Please confirm
+              whether hair is included when making your appointment.
+            </p>
+          </details>
+
+
+          <details>
+            <summary>
+              How should I prepare my hair?
+            </summary>
+
+            <p>
+              We recommend arriving with clean, fully detangled
+              and stretched hair unless your appointment includes
+              a preparation service.
+            </p>
+          </details>
+
+
+          <details>
+            <summary>
+              How long will my appointment take?
+            </summary>
+
+            <p>
+              Appointment times depend on the style, size,
+              length and amount of hair. Your estimated time
+              will be provided during booking.
+            </p>
+          </details>
+
+
+          <details>
+            <summary>
+              Can I bring an inspiration photo?
+            </summary>
+
+            <p>
+              Absolutely. Inspiration photos help us understand
+              your preferred size, length, pattern and overall look.
+            </p>
+          </details>
+
+
+          <details>
+            <summary>
+              What is your cancellation policy?
+            </summary>
+
+            <p>
+              Please contact Sumptuous Braids as early as possible
+              if you need to change or cancel your appointment.
+              Your final cancellation and deposit policy can be
+              provided during booking.
+            </p>
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section class="cta">
+
+      <div class="container">
+
+        <h2>
+          Your next signature look starts here.
+        </h2>
+
+        <p>
+          Beautiful braids. Intentional styling.
+          A look that's completely yours.
+        </p>
+
+        <a href="#booking" class="btn btn-primary">
+          Book Sumptuous Braids
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+
+    <section class="section" id="contact">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Contact Us
+          </span>
+
+          <h2>
+            Let's talk hair.
+          </h2>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+          <article class="contact-card">
+            <span>📍</span>
+            <h3>Location</h3>
+            <p>
+              Your City, State
+            </p>
+          </article>
+
+
+          <article class="contact-card">
+            <span>📞</span>
+            <h3>Phone</h3>
+            <p>
+              (000) 000-0000
+            </p>
+          </article>
+
+
+          <article class="contact-card">
+            <span>✉</span>
+            <h3>Email</h3>
+            <p>
+              hello@sumptuousbraids.com
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <div class="footer-logo">
+            Sumptuous Braids
+          </div>
+
+          <p>
+            Luxury braiding designed around your beauty,
+            confidence and individuality.
+          </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>Explore</h3>
+
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#faq">FAQ</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>Appointments</h3>
+
+          <a href="#booking">Book Now</a>
+          <a href="#contact">Contact</a>
+          <a href="#">Policies</a>
+          <a href="#">Gift Cards</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>Follow</h3>
+
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">Facebook</a>
+          <a href="#">Pinterest</a>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+        © <span id="year"></span> Sumptuous Braids. All rights reserved.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =======================================================
+       FLOATING WHATSAPP
+  ======================================================== -->
+
+  <!-- Replace 1234567890 with the business WhatsApp number -->
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/1234567890"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat with Sumptuous Braids on WhatsApp"
+  >
+    ☎
+  </a>
+
+
+  <!-- SCROLL TOP -->
+
+  <button
+    class="scroll-top"
+    id="scrollTop"
+    aria-label="Scroll to top"
+  >
+    ↑
+  </button>
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
+  <script>
+
+    /* -------------------------------------------------------
+       MOBILE MENU
+    ------------------------------------------------------- */
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+
+      navLinks.classList.toggle("active");
+
+      const isOpen = navLinks.classList.contains("active");
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+
+    });
+
+
+    /* -------------------------------------------------------
+       CLOSE MOBILE MENU AFTER CLICK
+    ------------------------------------------------------- */
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+        menuToggle.textContent = "☰";
+
+      });
+
+    });
+
+
+    /* -------------------------------------------------------
+       BOOKING FORM
+    ------------------------------------------------------- */
+
+    const bookingForm = document.getElementById("bookingForm");
+
+    bookingForm.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      const name =
+        document.getElementById("name").value;
+
+      const service =
+        document.getElementById("service").value;
+
+      const date =
+        document.getElementById("date").value;
+
+      const time =
+        document.getElementById("time").value;
+
+      alert(
+        `Thank you, ${name}!\n\n` +
+        `Your appointment request for ${service} ` +
+        `on ${date} at ${time} has been received.\n\n` +
+        `Sumptuous Braids will contact you to confirm availability.`
+      );
+
+      bookingForm.reset();
+
+    });
+
+
+    /* -------------------------------------------------------
+       YEAR
+    ------------------------------------------------------- */
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    /* -------------------------------------------------------
+       SCROLL TO TOP
+    ------------------------------------------------------- */
+
+    const scrollTop =
+      document.getElementById("scrollTop");
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 500) {
+
+        scrollTop.classList.add("show");
+
+      } else {
+
+        scrollTop.classList.remove("show");
+
+      }
+
+    });
+
+
+    scrollTop.addEventListener("click", () => {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    });
+
+  </script>
+
+</body>
+  </html>
